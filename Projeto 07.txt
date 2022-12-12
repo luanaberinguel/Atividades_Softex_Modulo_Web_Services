@@ -1,0 +1,19 @@
+GET: http://localhost:3000/cities:
+
+Retorno de dados:
+
+[
+	{
+		"city": "São Paulo",
+		"state": "São Paulo",
+		"_id": "1"
+	},
+		"city": "Belo Horizonte",
+		"state": "Minas Gerais",
+		"_id": "2"
+	},
+		"city": "Recife",
+		"state": "Pernambuco",
+		"_id": "3"
+	}
+]
