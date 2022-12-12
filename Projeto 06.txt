@@ -1,0 +1,71 @@
+public long Insert(String tabela, ContentValues values) {
+	long linhasInseridas = 0;
+
+	this.Open();
+	try {
+		Log.i(CNT_LOG, "Inserindo registro de alunos");
+
+		linhasInseridas = db.insert(tabela, null, values);
+
+	Log.i(CNT_LOG, "Alunos: " + String.valueOf(linhasInseridas));
+	} finally {
+		this.Close();
+	}
+
+	return linhasInseridas;
+}
+
+public long Update(String tabela, ContentValues values, String where, String[] whereArgs) {
+	long linhasAlteradas = 0;
+
+	this.Open();
+	try {
+		Log.i(CNT_LOG, "Alterando registro(s) de alunos");
+
+		linhasAlteradas = db.update(tabela, values, where, whereArgs);
+
+	} finally {
+		this.Close();
+		Log.i(CNT_LOG, "Linha(s) alterada(s): " + String.valueOf(linhasAlteradas));
+	}
+
+	return linhasAlteradas;
+}
+
+public int Delete(String tabela, String where, String[] whereArgs) {
+	int linhasExcluidas = 0;
+
+	this.Open();
+	try {
+		Log.i(CNT_LOG, "Iniciando exclusão de alunos");
+
+		this.Open();
+
+		linhasExcluidas = db.delete(tabela, where, whereArgs);
+
+		Log.i(CNT_LOG, "Registro excluído(s): " + String.valueOf(linhasExcluidas));
+	} finally {
+		this.Close();
+	}
+
+	return linhasExcluidas;
+}
+
+public Cursor Select(String tabela, String campos[], String where, String[] whereArgs,
+String groupBy, String having, String orderBy) {
+	Cursor c = null;
+
+	this.Open();
+	try {
+		Log.i(CNT_LOG, "Iniciando Busca de alunos");
+		this.Open();
+
+		c = db.query(tabela, campos, where, whereArgs, groupBy, having, orderBy);
+
+		Log.i(CNT_LOG, "Busca realizada. Total de registros de alunos: " + c.getCount());
+	} finally {
+		this.Close();
+	}
+
+	return c;
+}
