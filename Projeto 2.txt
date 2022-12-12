@@ -1,0 +1,21 @@
+O Protocolo de Transferência de Hipertexto (protocolo HTTP) é usado principalmente em redes baseadas em IP para a transmissão de páginas web de um servidor para o navegador. Ele funciona sem criptografia e não se limita a aplicativos.
+
+A maneira como o HTTP funciona é a seguinte: o cliente inicia uma solicitação ao servidor web, digitando-a na barra de endereço do navegador. Este, por sua vez, responde inicialmente com um código de status, que consiste em três dígitos. Ele contém a informação se a solicitação pode ser respondida com sucesso ou não. 
+
+Todo usuário já viu esse código de status antes: se houver um erro na solicitação, a mensagem 404 aparece, por exemplo. Não apenas o conteúdo HTML pode ser transmitido via HTTP, mas também outros formatos. Hoje em dia, muitos sites são criados dinamicamente, por exemplo, usando PHP. Esses formatos também podem ser transmitidos via HTTP e reproduzidos diretamente no lado do cliente.
+
+Com GET, geralmente, um arquivo é solicitado do servidor. Para que o servidor reconheça o recurso a ser transmitido, é solicitado por um URI (Uniform Resource Identifier), por exemplo, uma URL. O método de solicitação POST é usado para transferir dados para o servidor. Com o método de solicitação HEAD, apenas o cabeçalho de um documento é solicitado, mas não o corpo.
+
+GET: essa requisição é usada para ler ou entregar dados de um servidor web. Quando realizada com sucesso, o servidor retorna o código de status 200.
+HEAD: uma requisição HEAD solicita ao servidor somente informações sobre o cabeçalho da página requisitada. O cabeçalho possuí diversas informações que podem ser úteis, como tamanho da página, cookies, tags e muito mais.
+POST: é usado para transferir dados para o servidor (arquivos, formulários, etc.). Quando ocorre com sucesso, é retornado o código de status 201.
+PUT: essa requisição é utilizada quando se deseja modificar algum dado no servidor ou caso não exista nenhum dado para se atualizar, será gerado um.
+PATCH: essa requisição aplica modificações parciais em um dado do servidor.
+DELETE: essa requisição deleta um dado especificado no servidor
+CONNECT: essa requisição estabelece um túnel TCP/IP com o servidor, geralmente para facilitar a comunicação criptografada com SSL (HTTPS).
+OPTIONS: descreve as opções de comunicações de um determinado recurso do servidor
+TRACE: essa requisição envia um teste de loopback mostrando o caminho que uma requisição faz para chegar até o recurso especificado no servidor destinado. Pode ser útil para fazer debug caso alguma requisição esteja resultando em erro.
+
+WSDL é uma notação XML para descrever um serviço da web. Uma definição WSDL indica a um cliente como compor uma solicitação de serviço da web e descreve a interface que é fornecida pelo provedor de serviços da web.
+
+Uma definição WSDL é dividida em seções separadas que especificam a interface lógica e os detalhes físicos de um serviço da web. Os detalhes físicos incluem informações de terminal, como número da porta HTTP e informações de ligação que especifica como a carga útil SOAP é representada e qual transporte é utilizado.
